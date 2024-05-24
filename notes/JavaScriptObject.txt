@@ -1,0 +1,9 @@
+Javascript object is of key value pair and it can consist of diffrent types of datatypes as well as functions too
+Object Literal is a key value pair data structure
+Function inside object are called methods
+
+this : context of this is window
+but in object context changes to object and it can access object values
+in normal function this will give undefined but in arrow function this will give window object
+
+Object destructuring : 

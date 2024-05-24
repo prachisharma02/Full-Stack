@@ -1,0 +1,9 @@
+API : APPLICTION PROGRAMMING INTERFACE
+
+when we(Third party) want to access the database of an organisation 
+but it's not safe the we uses API which gives security and provide a set of codes
+called programming interface with witch we can use their data without accessing the database
+
+example: to login through facebook in our (third party app) but facebook will not give access to its 
+database so there API is used which provide a interface to login and we can use their data to login 
+without accessing their database. 

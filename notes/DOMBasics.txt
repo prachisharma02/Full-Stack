@@ -1,0 +1,22 @@
+document.documentElement : returns root elements
+document.firstElementchild : returns first chile elements
+
+# HTML is a parent HEAD and BODY is child so they are siblings
+document.body.nextelementsibling : returns next sibling    
+OUTPUT : nothing
+document.head.nextelementsibling :
+OUTPUT : BODY
+document.body.previouselementsibling : returns previous sibling
+OUTPUT: HEAD
+
+document.getelementbytagname : to find by html tags like p,button...
+document.getelementbyname : to make changes through name attribute
+document.queryselector : selects first matching element
+
+EVENT OBJECT
+
+TO GET THE INFORMATION ABOUT THE EVENT
+EVENT
+CHECK EVENT
+EVENT.TARGET
+EVENT.TYPE

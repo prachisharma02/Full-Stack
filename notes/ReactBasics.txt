@@ -1,0 +1,26 @@
+WHY WE USE REACT
+ 1. React is a JavaScript library for building user interfaces. 
+ 2. It's the most popular framework for creating interactive web applications and single-page applications.
+ 3. its is easier to manage and helps in building complex ui 
+ 4. React allows developers to create reusable UI components, making it easier to maintain large codebases. 
+
+and from developers pov it is quickly and efficiently with significantly less code
+you develop your applications by creating reusable components
+
+
+As React is a LIBRARY which means  it contains pre-defined functions
+
+SO
+
+React: IS a component based Component means set of codes together 
+like h1 p and br makea one component and if we need this componenet 
+repeatedly we make a function and can call it as many times is needed
+we make a component and call it as many times we need 
+
+React consist of two types of componenets function based and class based 
+currently we use function based
+
+there cannot be two return statements 
+function App must have only one return statement
+if we add then error but this can be done by js fragments  i.e <>at starting  </>at end 
+JSX JAVASCRIPT SYNTAX EXTENSION:  CODE written inside return statement in html a little bit of js

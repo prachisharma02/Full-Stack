@@ -1,0 +1,20 @@
+DIFFRENCE BETWEEN FRAMEWORK AND LIBRARIES
+
+LIBRARIES are set of codes that we can directly call
+and FRAMEWORK can't be called directly but it itself calls the code and FRAMEWORKis is of set of LIBRARIES
+
+FRAMEWORK is a software a application but LIBRARIES is not
+
+LIBRARIES are the collection of pre defined functions when we want to use it we just  call that function
+
+In LIBRARIES we have the control on the flow of execution as we call the code here and decides the flow
+how to execute by calling in our way example REACTJS but  
+in FRAMEWORK we write the code but FRAMEWORK calls the code and it has control on the flow of execution 
+it decide when to call what code example ANGULARJS
+
+FRAMEWORK provides the design architecture we just write the code
+
+Also
+
+IDE INTEGRATED DEVELOPMENT ENVIRONMENT IS JUST A APPLICTION IT JUST PROVIDES CODE EDITOR TOOLS LIKE 
+COMPILER LOADER AND DEBUGGING TOOLS

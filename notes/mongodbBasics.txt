@@ -1,0 +1,6 @@
+db.Students.update({ name: "prachi" }, { $set: { name: "pra", rno: 2 } });
+//to update a row
+db.Students.updateMany({}, { $unset: { rno: "" } });
+//to remove any field
+db.Students.aggregate([{$unset:[name.firstname]}])
+//to remove subfields
