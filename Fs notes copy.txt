@@ -1,0 +1,273 @@
+
+27
+1.  What is React? What are the advantages of using React? What are the 
+limitations of React? 
+ReactJS is a declarative, efficient, and flexible JavaScript library for 
+building reusable UI components. It is an open-source, component-based 
+front end library responsible only for the view layer of the application. 
+Advantage: 
+1.  Component-Based Architecture:. This modular structure promotes 
+reusability, maintainability, and scalability, as components can be easily 
+composed and nested within each other. 
+2.  Virtual DOM: React can efficiently update and render only the necessary 
+components that have changed, rather than re-rendering the entire page. 
+This leads to improved performance and a smoother user experience. 
+3.  Simplicity:ReactJS uses JSX file which makes the application simple and 
+to  code  as  well  as  understand.  We  know  that  ReactJS  is  a  component-
+based approach which makes the code reusable as your need. This makes 
+it simple to use and learn. 
+4.  platforms. This allows for faster development and easier maintenance of 
+mobile apps. 
+5.  Performance Optimization: use of a virtual DOM, memoization, and 
+shouldComponentUpdate lifecycle method, which help in improving the 
+efficiency of React applications.  
+6.  JSX Syntax: React uses JSX (JavaScript XML) syntax, which allows 
+developers to write HTML-like code within JavaScript. This enhances 
+code readability and makes it easier to visualize  
+Disadvantage 
+It’s a Library, Not a Framework: the flexible nature of React reduces 
+uniformity. Flexibility in the organization of code makes it harder to 
+understand code. This can be difficult when analyzing a project you are 
+unfamiliar with. 
+It Uses JSX:it allows you to use a mixture of HTML and JavaScript to 
+write code in componentsJSX adds complexity to learning React, 
+especially for beginner 
+Lack of Updated Documentation: Changes made to the libraries affect 
+the performance of Apps if not updated. 
+ 
+ 
+ 
+ 
+the call(), apply(), and bind() methods are used to explicitly set the value of 
+this when invoking a function.  
+They provide a way to control the context in which a function is executed 
+and allow you to pass arguments to the function. 
+call() method: The call() method is used to invoke a function with a 
+specified this value the first argument to call() sets the value of this, and  
+arguments are passed as parameters to the function being called. 
+function greet(message) { 
+  console.log(`${message}, ${this.name}!`); 
+} 
+const person = { 
+  name: 'John' 
+}; 
+greet.call(person, 'Hello'); // Output: Hello, John! 
+apply() method: The apply() method is similar to call(), but it accepts the 
+function arguments as an array or an array-like object. 
+function greet(message, punctuation) { 
+  console.log(`${message}, ${this.name}${punctuation}`); 
+} 
+ 
+const person = { 
+  name: 'John'}; 
+ 
+greet.apply(person, ['Hello', '!']); // Output: Hello, John! 
+bind() method: It allows you to bind a function to a specific context 
+without invoking it immediately. The bind() method returns a new function 
+that can be called later. 
+ 
+55. What is the difference between exec () and test () methods in 
+javascript? 
+Exec(): 
+• The exec() method is used to search for a match in a given string. 
+• It returns an array containing information about the first match 
+found, or null if no match is found. 
+• The returned array contains additional properties like index (the 
+starting index of the match in the string) and input (the original input 
+string). 
+const str = 'Hello, World!'; 
+const regex = /W(or)ld/; 
+const result = regex.exec(str); 
+console.log(result); // Output: ["World", "or", index: 7, input: "Hello, 
+World!"] 
+test(): 
+• The test() method is used to check if a pattern matches a given string. 
+• It returns a boolean value (true or false) indicating whether a match 
+is found. 
+• It does not provide detailed information about the match or capture 
+groups. 
+• It is typically used when you only need to check if a pattern exists in 
+a string, without requiring further details about the match. 
+const str = 'Hello, World!'; 
+const regex = /W(or)ld/; 
+ 
+const result = regex.test(str); 
+console.log(result); // Output: true 
+ 
+56. What is currying in JavaScript? 
+• The process of transforming a function with multiple arguments into 
+a curried function is called currying. 
+• It enables us to create new functions based on existing ones with 
+preset values for some arguments. 
+• Currying can be achieved manually by creating nested functions 
+function add(a) { 
+  return function(b) { 
+    return a + b; 
+}} 
+const addCurried = add(5); // Currying the add function 
+console.log(addCurried(3)); // Output: 8 
+57. Explain Scope and Scope Chain in javascript. 
+Scope refers to the accessibility and visibility of variables, functions, and 
+objects in a particular part of your code during runtime. It determines where 
+variables and functions are defined and where they can be accessed. 
+The scope chain is formed based on the nesting of functions or blocks. 
+Each function or block creates its own scope, and when a variable is not 
+found in the current scope, JavaScript looks for it in the next outer scope 
+until it finds the variable or reaches the global scope. 
+58. Explain Closures in JavaScript. 
+• A closure is a function that retains access to variables from its outer 
+(enclosing) scope even after the outer function has finished 
+executing.  
+• It allows access its lexical scope, including variables, even when the 
+function is invoked outside its original scope. 
+• The closure keeps the reference to outerVariable intact, allowing 
+innerFunction() to access and use it even when executed outside the 
+scope of outerFunction(). 
+function outerFunction() { 
+  var outerVariable = 'I am from the outer function'; 
+  function innerFunction() { 
+    console.log(outerVariable); 
+  } 
+  return innerFunction; 
+} 
+var closure = outerFunction(); 
+closure(); // Output: I am from the outer function 
+59. What are object prototypes? 
+• Prototypes provide a mechanism for object inheritance, allowing 
+objects to inherit properties and methods from other objects. 
+• his prototype object acts as a blueprint or template for the object, 
+defining the shared properties and methods that the object can access. 
+60. What are callbacks? 
+a callback is a function that is passed as an argument to another function 
+and is invoked or called by that function at a specific time or in response to 
+a particular event. 
+61. What is the use of a constructor function in javascript? 
+• a constructor function is a special type of function that is used to 
+create and initialize objects. 
+• It serves as a blueprint or template for creating multiple objects of 
+the same type, often referred to as instances. 
+• The primary purpose of a constructor function is to define the 
+properties and methods that will be shared by all instances created 
+from it.  
+• When a constructor function is invoked with the new keyword, it 
+creates a new object and sets the this keyword to refer to that newly 
+created object.  
+  
+62. What is DOM? What do you mean by BOM? 
+• DOM is a programming interface for web documents that represents 
+the structure of an HTML or XML document as a tree-like model. 
+• DOM consists of a hierarchy of nodes that represent different parts of 
+an HTML or XML document.  
+• Each node in the DOM tree corresponds to an element, attribute, or 
+text content in the document. 
+BOM is an API provided by web browsers that allows JavaScript code 
+to interact with and control the browser window and its various 
+components. 
+Some of the key components of the BOM include: 
+• Window Object: The window object represents the browser 
+window or tab. 
+• Document Object: The document object represents the web page 
+loaded in the browser window 
+• History Object: The history object allows navigation through the 
+user's browsing history 
+• Location Object: The location object represents the URL of the 
+current web page. 
+ 
+63. What is the distinction between client-side and server-side JavaScript? 
+Client side Server side 
+runs on the client's web browser. runs on the server, typically using a 
+JavaScript runtime environment like 
+Node.js. 
+used for enhancing the user interface 
+and interactivity of web pages. 
+used for server-side scripting and 
+handling server-related tasks. 
+used for form validation, handling 
+user events, making AJAX requests, 
+interact with databases, perform file 
+operations, handle HTTP requests, 
+and implement server-side logic 
+ used for building web servers, APIs, 
+real-time applications, and server-
+side rendering. 
+ 
+64. Differences between declaring variables using var, let and const. 
+65. What is the rest parameter and spread operator? 
+Rest Parameter: 
+The rest parameter is denoted by three dots (...) followed by a parameter 
+name in a function declaration. It allows a function to accept an arbitrary 
+number of arguments as an array. 
+function sum(...numbers) { 
+  let total = 0; 
+  for (let number of numbers) { 
+    total += number; 
+  } 
+  return total; 
+} 
+ 
+console.log(sum(1, 2, 3, 4, 5)); // Output: 15 
+Spread Operator: 
+The spread operator is also denoted by three dots (...), but it is used in a 
+different context. It allows an iterable (such as an array or string) to be 
+expanded into individual elements. 
+const array1 = [1, 2, 3]; 
+const array2 = [4, 5, 6]; 
+const combinedArray = [...array1, ...array2]; 
+console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6] 
+const string = 'Hello'; 
+const characters = [...string]; 
+console.log(characters); // Output: ['H', 'e', 'l', 'l', 'o'] 
+ 
+66. In JavaScript, how many different methods can you make an object? 
+Object literals: Objects can be created using object literals by enclosing 
+key-value pairs in curly braces. 
+const person = { name: 'John', age: 25 }; 
+Constructor function: 
+function Person(name, age) { 
+  this.name = name; 
+  this.age = age; 
+} 
+const person = new Person('John', 25); 
+Object.create(): 
+const personPrototype = { 
+  greet() { 
+    console.log('Hello!'); 
+  } 
+}; 
+const person = Object.create(personPrototype); 
+person.greet(); // Output: Hello! 
+ES6 Class: 
+class Person { 
+  constructor(name, age) { 
+    this.name = name; 
+    this.age = age; 
+  } 
+ 
+  greet() { 
+    console.log('Hello!'); 
+  } 
+} 
+const person = new Person('John', 25); 
+person.greet(); // Output: Hello! 
+ 
+67. What is the use of promises in javascript? 
+Promises in JavaScript are a way to handle asynchronous operations 
+Promises represent the eventual completion or failure of an asynchronous 
+operation and allow you to attach callbacks that will be executed when the 
+operation is successful (resolved) or encounters an error (rejected). 
+function getData() { 
+  return new Promise((resolve, reject) => { 
+    // Perform asynchronous operation 
+    // If successful, call resolve() with the result 
+    // If there's an error, call reject() with the error 
+  }); 
+} 
+ 
+getData() 
+  .then((result) => { 
+    // Handle successful operation 
+  }) 
+  .catch((error) => { 
+    // Handle error 
+  }); 
+68. What are classes in javascript? 
