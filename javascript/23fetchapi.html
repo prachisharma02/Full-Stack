@@ -1,0 +1,73 @@
+GET https://icanhazdadjoke.com/slack
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #2980b9;
+        font-family: "Redressed", cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: white;
+        padding: 50px 50px;
+        text-align: center;
+        max-width: 100%;
+        width: 800px;
+      }
+      .joke {
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 40px;
+        max-width: 600px;
+        margin: 50px aut0;
+      }
+      h3 {
+        color: #7f8c8d;
+        margin: 0;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+      }
+      .btn {
+        background-color: aqua;
+        color: #000;
+        border: 0;
+        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        outline: none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>best jokes</h3>
+      <div id="joke" class="joke">awesome joke loading</div>
+      <button id="btn" class="btn">next joke</button>
+    </div>
+    <script>
+      const btn = document.querySelector("#btn");
+    </script>
+  </body>
+</html>

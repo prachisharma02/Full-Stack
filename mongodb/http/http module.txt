@@ -1,0 +1,6 @@
+http module can create http server that listens to the servers port and gives the response back to the client 
+the port numbers range from 0 to 65535
+Only port numver 0-1024 are reserved for priviledge services and designated to well known ports
+the create server includes response,request method which is supplied by nodejs
+the request object can be used to get informationa about the current http request example url,request header and 
+data the response object is used to send a response for current http request

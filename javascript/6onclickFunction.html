@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: rgb(164, 89, 235);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="hello">welcome Guest</h1>
+    <p class="para">hiiiii</p>
+    <p class="para">helloooo</p>
+    <button onclick="changecontent()">click me</button>
+    <button id="hel">tap</button>
+    <script>
+      //2nd WAY OF WRITING FUNCTION
+      let changecontent = () => {
+        document.getElementById("hello").innerHTML = "HELLO PRACHI";
+        document.getElementsByTagName("p")[0].innerHTML = "not"; //IN TAGNAME  WE HAVE TO DEFINE INDEX POSITION TO ACCESS TAGS  IT STARTS WITH 0 BY USING [0],[1]...
+
+        document.querySelector(".para").innerHTML = "hhhheeellloooo";
+        document.querySelectorAll(".para").innerHTML = "hhhheeellloooo pirachi"; // : it doesnot change just get all the nodes
+      };
+      //3rd WAY OF WRITING FUNCTION
+
+      hel.onclick = function () {
+        //ANONYMOUS FUNCTION
+        let pr = prompt("enter your name");
+      }; // IT WILL NOT RUN BECAUSE AGAIN THIS FUNCTION IS CALLED  AFTER THIS
+
+      hel.onclick = function () {
+        //ANONYMOUS FUNCTION
+        // let pr = prompt("enter your name");
+        alert("prachi");
+        document.getElementById("hello").innerHTML = pr;
+      };
+
+      //4th WAY OF WRITING FUNCTION
+
+      hel.addEventListener("click", () => {
+        alert("hello prachi");
+        //BUT IT WILL RUN
+      });
+      hel.addEventListener("click", () => {
+        alert("hello khushi");
+      });
+
+      let checkEvent = () => {
+        console.log(event);
+        console.log(event.target);
+        console.log(event.type);
+      };
+
+      hel.addEventListener("click", checkEvent);
+    </script>
+  </body>
+</html>
