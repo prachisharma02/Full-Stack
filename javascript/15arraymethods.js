@@ -109,7 +109,7 @@ const uflat = any.flat(Infinity);
 let filterf = (curprice) => curprice > 100 && curprice < 1000;
 
 const filterr = prices.filter(filterf);
-console.log(filterr);
+// console.log(filterr);
 
 // *******************MAP METHOD***************
 
@@ -127,7 +127,7 @@ console.log(filterr);
 
 //FIND SQUARE ROOT OF GIVEN ARRAY
 
-//var square = [25, 64, 81, 4, 16];
+var square = [25, 64, 81, 4, 16];
 // var sqr = square.map((element) => {
 //   return Math.sqrt(element);
 // });
@@ -136,11 +136,49 @@ console.log(filterr);
 // ***********************REDUCE METHID**************
 
 //REDUCE METHOD IS USED FOR CALCULATIONS OR REDUCING AN ARRAY INTO SINGLE VALUE
-
+//acc is a initial value assigned in which we store the values that are reduced also
+//acc=first value here in square its 25 so
+//acc initial val = 25
+//ele=64
 // var sum = square.reduce((acc, ele) => {
+//   console.log(`acc value is ${acc} and currvalue is ${ele}`);
 //   return (acc += ele);
 // });
 // console.log(sum);
+
+//but if we want to assign 0 as the accumulator value and curr value should start from first then
+
+var sum = square.reduce((acc, ele) => {
+  // console.log(`acc value is ${acc} and currvalue is ${ele}`);
+  return (acc += ele);
+}, 0); // assign 0 to acc
+
+////******************************************************** CREATING A SUM OF SHOPPING CART USING REDUCE METHOD*******************************************************************
+let cart = [
+  {
+    product: "milk",
+    price: 200,
+  },
+  {
+    product: "cofee",
+    price: 500,
+  },
+  {
+    product: "sugar",
+    price: 300,
+  },
+  {
+    product: "syrup",
+    price: 1100,
+  },
+  {
+    product: "mug",
+    price: 2200,
+  },
+];
+
+let total = cart.reduce((acc, item) => (acc += item.price), 0);
+console.log(total);
 
 //******************ALL THREE TOGETHER ***************
 
