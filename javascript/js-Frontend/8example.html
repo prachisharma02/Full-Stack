@@ -8,20 +8,41 @@
 
 <script>
 var x = document.getElementById("myBtn");
+// var y = document.getElementById("myBtn").getAttribute('myBtn'); // we can get the attributes
+
+// var z = document.getElementById("myBtn").setAttribute('class','Btn'); // to set the attributes like class id
+
 x.addEventListener("mouseover", myFunction);
-x.addEventListener("click", mySecondFunction);
+// x.addEventListener("click", mySecondFunction);
 x.addEventListener("mouseout", myThirdFunction);
+x.addEventListener("click", fourthFunction);
+
 
 function myFunction() {
   document.getElementById("demo").innerHTML += "Moused over!<br>";
+    console.log("mouseover")
+
 }
 
 function mySecondFunction() {
   document.getElementById("demo").innerHTML += "Clicked!<br>";
+    console.log("clicked")
+ // inner html will show all the html contents so you can add br tags in the content it will work like html 
+
+
 }
 
 function myThirdFunction() {
-  document.getElementById("demo").innerHTML += "Moused out!<br>";
+  document.getElementById("demo").textContent += "Moused out!<br>";
+      console.log("mouseout")
+      // text content will also show hidden contents and it will display only text and not work with html tags it will print br
+
+}
+function fourthFunction() {
+  document.getElementById("demo").innerText += "Clicked!<br>";
+  console.log("clicked by innertext" );
+        // innerText will not show hidden contents  and it will display only text and not work with html tags it will print br
+
 }
 </script>
 
