@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Items with Same Class</title>
+  </head>
+  <body style="background-color: #212121; color: bisque">
+    <h2>List of Items with the Same Class</h2>
+
+    <ul class="parent">
+      <li class="common-class">Item 1</li>
+      <li class="common-class">Item 2</li>
+      <li class="common-class">Item 3</li>
+    </ul>
+    <!--when you inspect and will write
+    const temp=document.queryselectorall('li')  ... it will select all the li elements 
+    thn this will give you a nodelist which is similar to arrays but not arrays as arrays have map function but nodelist doesnot have
+    so it will not allow you to change the color or any styling by doing like 
+    temp.style.color='green' -->
+    <!-- BECAUSE IT IS GIVING YOU A LIST CALLED NODELIST SO TO TO THAT WE HAVE TO USE TEMP[0].STYLE...
+    ALSO IF WE WANT ALL THE ELEMENTS TO BE GREEN THEN YOU CAN DO FOREACH METHOD  -->
+
+    <!-- SO TO DO THAT
+        const temp=document.queryselectorall('li')
+        temp.forEach(function (l) {
+            l.style.color='green'   
+        }) -->
+    <script>
+      // PARENT-CHILD RELATIONSHIP
+      const parent = document.querySelector(".parent");
+      const child = parent.children;
+      console.log(parent.children);
+      console.log(parent.firstElementChild);
+      console.log(parent.lastElementChild);
+      console.log(parent.sibling);
+      console.log(parent.childnode); // nodes consist of all the lements including break text
+      // first element is text whixh the enter
+
+      const conv = Array.from(child);
+      conv.forEach((h) => {
+        h.style.color = "red";
+      });
+    </script>
+  </body>
+</html>
