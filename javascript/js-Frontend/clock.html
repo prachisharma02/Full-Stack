@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital clock</title>
+    <style>
+      body {
+        background-color: azure;
+      }
+      .clock {
+        color: rgb(46, 29, 7);
+        position: absolute;
+        top: 35%;
+        left: 38%;
+        font-weight: bold;
+        font-size: 50px;
+      }
+      #clock {
+        color: rgb(46, 29, 7);
+        position: absolute;
+        top: 60%;
+        left: 38%;
+        font-weight: bold;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <span id="hours">00</span>
+      <span>:</span>
+      <span id="minutes">00</span>
+      <span>:</span>
+      <span id="seconds">00</span>
+      <span id="zones">AM</span>
+    </div>
+    <div id="clock"></div>
+    <script>
+      function display() {
+        var d = new Date();
+        var hours = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        var zone = document.getElementById("zones");
+        if (hours >= 12) {
+          zones.innerHTML = "PM";
+        } else {
+          zones.innerHTML = "AM";
+        }
+
+        if (hours > 12) {
+          hours = hours - 12;
+        }
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+      }
+      setInterval(display, 10);
+
+      setInterval(() => {
+        var d = new Date();
+
+        const clock = document.getElementById("clock");
+        clock.innerHTML = d.toLocaleTimeString();
+      }, 1000);
+    </script>
+  </body>
+</html>
