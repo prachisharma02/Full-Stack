@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Number guessing Game</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif,
+          sans-serif;
+        background-color: rgb(234, 176, 151);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      h2,
+      h4 {
+        margin: 10px;
+        padding: 10px;
+        color: rgb(174, 38, 174);
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        color: #555;
+      }
+
+      .game {
+        margin-bottom: 1.5rem;
+      }
+
+      .input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        width: calc(100% - 1rem);
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        border: 0.5px solid grey;
+      }
+
+      .submit {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        background-color: #933b8d;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .submit:hover {
+        background-color: #550b4f;
+      }
+
+      .result {
+        margin-top: 1rem;
+      }
+
+      .result-paras {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .reset {
+        /* display: none; */
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .reset:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Number guessing Game</h1>
+      <h2>Try and guess the correct number</h2>
+      <h4>You will get 10 chances</h4>
+      <form class="game">
+        <label for="guess">Guess a number: </label>
+        <input type="text" class="input" id="guess" />
+        <input type="button" class="submit" value="Submit" />
+      </form>
+      <p class="msg"></p>
+      <p>Previous guesses: <span class="prev"></span></p>
+      <p>Remaining guesses: <span class="remain">10</span></p>
+      <button id="reset" class="reset">Start new game</button>
+    </div>
+    <script>
+      var random = Math.floor(Math.random() * 100) + 1;
+      var guess = document.querySelector(".input");
+      var prevGuess = document.querySelector(".prev");
+      var remainingGuess = document.querySelector(".remain");
+      var submit = document.querySelector(".submit");
+      var message = document.querySelector(".msg");
+      var previousGuess = [];
+      var numguess = 1;
+      var game = true;
+      submit.addEventListener("click", input);
+
+      function input() {
+        var userGuess = parseInt(guess.value);
+        var remain = 10 - numguess;
+        previousGuess.push(userGuess);
+        numguess++;
+        remainingGuess.innerHTML = remain;
+        checknumber(userGuess, remain);
+
+        guess.value = "";
+        prevGuess.innerHTML = previousGuess.join(", ");
+        console.log(previousGuess);
+        console.log(random);
+      }
+
+      function checknumber(userGuess, remain) {
+        if (userGuess === random) {
+          message.innerHTML = "Congratulations, you guessed it right!";
+          endgame();
+        } else if (remain < 1) {
+          message.innerHTML = `You lost the game random no was ${random}`;
+          endgame();
+        } else if (userGuess > random) {
+          message.innerHTML = "The number is too high.";
+        } else {
+          message.innerHTML = "The number is too low.";
+        }
+      }
+
+      function endgame() {
+        guess.setAttribute("disabled", "");
+        submit.setAttribute("disabled", "");
+        game = false;
+      }
+      reset.addEventListener("click", newgame);
+
+      function newgame() {
+        random = Math.floor(Math.random() * 10) + 1;
+        previousGuess = [];
+        numguess = 1;
+        message.innerHTML = "";
+        prevGuess.innerHTML = "";
+        guess.removeAttribute("disabled");
+        submit.removeAttribute("disabled");
+        guess.value = "";
+        remainingGuess.innerHTML = `10`;
+        game = true;
+      }
+    </script>
+  </body>
+</html>
