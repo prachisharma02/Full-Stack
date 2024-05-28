@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Event Capturing and Bubbling</title>
+  </head>
+  <body>
+    <h1>Event Capturing and Bubbling Concept</h1>
+    <div id="p1">
+      <button id="c1">I am Child</button>
+    </div>
+    <div class="container" style="display: flex">
+      <div class="one" style="border: 1px solid black; padding: 10px">
+        <h4>event capturing</h4>
+        <p class="event1"></p>
+        <p class="event2"></p>
+      </div>
+      <div class="two" style="border: 1px solid black; padding: 10px">
+        <h4>event bubbling</h4>
+        <p class="event3"></p>
+        <p class="event4"></p>
+      </div>
+    </div>
+    <h1>capturing happens first and then bubbling happens</h1>
+
+    <div class="container2" style="display: flex">
+      <div class="one" style="border: 1px solid black; padding: 10px">
+        <h4>check console</h4>
+        <ul class="first">
+          <li>
+            <img
+              class="img"
+              style="height: 200px; width: 200px"
+              src="https://i.pinimg.com/736x/98/1b/dd/981bdda12f63d4567823d61cb57ce8ef.jpg"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              style="height: 200px; width: 200px"
+              class="img"
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="img"
+              style="height: 200px; width: 200px"
+              src="https://i.pinimg.com/736x/98/1b/dd/981bdda12f63d4567823d61cb57ce8ef.jpg"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="img"
+              style="height: 200px; width: 200px"
+              src="https://i.pinimg.com/736x/98/1b/dd/981bdda12f63d4567823d61cb57ce8ef.jpg"
+              alt=""
+            />
+          </li>
+          <li>
+            <img
+              class="img"
+              style="height: 200px; width: 200px"
+              src="https://i.pinimg.com/736x/98/1b/dd/981bdda12f63d4567823d61cb57ce8ef.jpg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      var parent = document.querySelector("#p1");
+      var child = document.querySelector("#c1");
+      var event1 = document.querySelector(".event1");
+      var event2 = document.querySelector(".event2");
+      var event3 = document.querySelector(".event3");
+      var event4 = document.querySelector(".event4");
+      var event5 = document.querySelector("ul");
+      var event6 = document.querySelector(".img");
+      // Event capturing phase: from root to target (outside-in)
+      parent.addEventListener(
+        "click",
+        function (e) {
+          console.log("Parent (capturing) is invoked");
+          event1.innerHTML = "Parent (capturing) is invoked";
+          console.log(e);
+        },
+        true // Use true to indicate capturing phase
+      );
+
+      child.addEventListener(
+        "click",
+        function () {
+          console.log("Child (capturing) is invoked");
+          event2.innerHTML = "Child (capturing) is invoked";
+        },
+        true // Use true to indicate capturing phase
+      );
+
+      // Event bubbling phase: from target to root (inside-out)
+      child.addEventListener(
+        "click",
+        function () {
+          console.log("Child (bubbling) is invoked");
+          event3.innerHTML = "Child (bubbling) is invoked";
+        },
+        false // Use false to indicate bubbling phase
+      );
+
+      parent.addEventListener(
+        "click",
+        function () {
+          console.log("Parent (bubbling) is invoked");
+          event4.innerHTML = "Parent (bubbling) is invoked";
+        },
+        false // Use false to indicate bubbling phase
+      );
+      //   event5.addEventListener("click", function (e) {
+      //     console.log("ul clicked of bubbling phase");
+      //   });
+      //   // if you want to stop bubbling also stop capturing so that outer inner become disconnected to each other than use
+      //   //e.stoppropogation
+      //   event6.addEventListener("click", function (e) {
+      //     e.stopPropagation();
+      //     console.log("clicked inside the ul that is img its bubbling phase ");
+      //   });
+      event5.addEventListener(
+        "click",
+        function (e) {
+          // but what happens  in capturing phase is that if we do stoppropogation then it will not move furthur
+          //down to li and if you click li it will not print the li console msg it will stop prpopgating
+          console.log("ul clicked of capturing phase");
+        },
+        true // means capturing phase
+      );
+      event6.addEventListener(
+        "click",
+        function (e) {
+          //   e.stopPropagation();nothing will happen cause capturing has done from parent so  nothing will happen
+          //   e.stopPropagation();
+
+          console.log("li that is img clciked of capturing phase");
+        },
+        true
+      );
+
+      // same is preventdefault() it is also use to stop the default behaviour of any event like submit
+      //you want to do something before submitting then do this
+
+      document.querySelector(".first").addEventListener("click", function (e) {
+        console.log(e.target.parentNode);
+        if (e.target.tagName === "IMG") {
+          let deletes = e.target.parentNode;
+          deletes.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
