@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>learning advanced javascript</h1>
+    <button id="stop">stop timeout</button>
+    <button id="start-interval">start interval</button>
+    <button id="stop-interval">stop interval</button>
+  </body>
+  <script>
+    const timeout = setTimeout(() => {
+      console.log("Prachi");
+      const h1 = document.createElement("h1");
+      h1.innerHTML = "created new element ";
+      document.body.appendChild(h1);
+    }, 5000);
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearTimeout(timeout);
+      console.log("stopped");
+    });
+
+    // this code will run when you click only once on the button else will not work
+    let interval;
+    //   document.querySelector('#start-interval').addEventListener('click',function () {
+    //   interval= setInterval(() => {
+    //   console.log("interval started");
+    //   }, 3000)
+    // })
+
+    // so this code will work if you click multiple times on the start button
+    document
+      .querySelector("#start-interval")
+      .addEventListener("click", function () {
+        if (!interval) {
+          // Prevent multiple intervals
+          interval = setInterval(() => {
+            console.log("interval started");
+          }, 3000);
+        }
+      });
+    document
+      .querySelector("#stop-interval")
+      .addEventListener("click", function () {
+        if (interval) {
+          clearInterval(interval);
+          interval = null; // Reset the interval variable
+          console.log("interval stopped");
+        }
+      });
+  </script>
+</html>
