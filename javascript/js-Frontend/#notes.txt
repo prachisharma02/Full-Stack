@@ -23,3 +23,9 @@ when you do getelementbyclassname
 it is not like nodelist you cant apply foreach so convert it into arrays by doing
 Arrays.from(htnlcollectionvarname)
 and then apply any styling
+
+
+javascript is not by default asynchronous use bnanana padta hai kuch web apis k through
+javasvript ka jo khud ka engine hai v8 vo single threaded hai but uska runtime (nodejs,browser)
+webapis provide krta hai jase settimeout setinterval 
+--To javascript nasynchronousb hai kyuki vo api uske sath aarhi hain

@@ -29,8 +29,11 @@ function getdata(id) {
     }, 2000);
   });
 }
-// // promise chhaining jab hme ek k baad ek function chhiy hota jaise instagram me pehle hme check krvana hai ki vo username exist krta hai ki nhi tabhi password verify ho chaining ek k baad ek to hm vha then use krte hain multiple function me but ye kabhi complex hojata hai syntax me to
-// asynch wait aaya ye apne app kaam krta hia ek k baad ek asynch btata hai ki asynchronous operation h aur await aur sare asynch function ko pause krdeta hai jav=btk pehle wala ka promise resolve na ho
+//  promise chhaining jab hme ek k baad ek function chhiy hota jaise instagram me pehle hme check krvana hai ki
+//  vo username exist krta hai ki nhi tabhi password verify ho chaining ek k baad ek to hm vha then use krte hain
+//  multiple function me but ye kabhi complex hojata hai syntax me to
+//  asynch wait aaya ye apne app kaam krta hia ek k baad ek asynch btata hai ki asynchronous operation h aur
+//await aur sare asynch function ko pause krdeta hai jav = btk pehle wala ka promise resolve na ho
 
 console.log("fetching data1");
 getdata(1)

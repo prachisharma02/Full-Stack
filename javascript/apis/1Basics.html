@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>XML http Request</title>
+    <style>
+      body {
+        background-color: #212121;
+        color: aliceblue;
+      }
+      h1 {
+        text-align: center;
+      }
+      ul {
+        margin: auto;
+        width: 500px;
+        list-style-type: disc;
+      }
+      ul li {
+        text-align: left;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+      }
+      table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        width: 70%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+      th {
+        background-color: #aea5a5;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>XML http Request</h1>
+    <div>
+      <ul>
+        <li>XMLHttpRequest (XHR) objects are used to interact with servers.</li>
+        <li>
+          You can retrieve data from a URL without having to do a full page
+          refresh.
+        </li>
+        <li>
+          This enables a Web page to update just part of a page without
+          disrupting what the user is doing.
+        </li>
+      </ul>
+    </div>
+    <table>
+      <tr>
+        <th>Value</th>
+        <th>State</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>UNSENT</td>
+        <td>Client has been created. open() not called yet.</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>OPENED</td>
+        <td>open() has been called.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>HEADERS_RECEIVED</td>
+        <td>send() has been called, and headers and status are available.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>LOADING</td>
+        <td>Downloading; responseText holds partial data.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>DONE</td>
+        <td>The operation is complete.</td>
+      </tr>
+    </table>
+    <h1>console.log ()</h1>
+    <div class="console">
+      <p>
+        comes from d8 present in v8 engine that is js engine written in C++
+        language which contain two main functions first is writefile
+      </p>
+    </div>
+  </body>
+  <script>
+    //XMLHttpRequest is a CLASS
+    const xhr = new XMLHttpRequest();
+    // giturl to fetch the data from this url
+
+    const gitURL = "https://api.github.com/users/prachisharma02";
+    // we need to call the api or request the api using GET method ki, me jo
+    // url pass kar kr rha hu uska data chaiye
+    xhr.open("GET", gitURL); // it does not actually call just opened
+
+    // continiously monitoring the state so to get the status every time state change of xhr
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        // 4 means when fetch complete
+        // const data = this.responseText;
+        // console.log(data.followers); // it will give undefined because
+        // anything come from the api comes in string format so first we have to parse that data so to do that
+        // we have to use JSON.parse() method
+
+        const data = JSON.parse(this.responseText); // this works with objects so string will give undefined thatswhy
+        console.log(`followers of ${data.login} are : ${data.followers}`);
+        console.log(data.avatar_url);
+      }
+    };
+    console.log("here");
+
+    xhr.send(); // here xhr is actually called
+    // we need to send the request and its async so we need to
+    // add the event to load the data and get it
+  </script>
+</html>
