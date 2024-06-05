@@ -1,0 +1,5 @@
+DOCUMENT: html is a data saved in a document
+then it needs structure so obj was created
+OBJECT : different objects like h1,p,h2, all these are objects
+but these all are different we need a relation between all so model was created
+MODEL

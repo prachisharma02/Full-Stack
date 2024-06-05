@@ -1,0 +1,13 @@
+Why to learn raect?
+    so we all know that --> to make easy building complex ui's 
+
+why react was created?
+    it started with facebook
+    when we opened facebook there was one notification icon, msg icon and message chat center of complete page 
+    so what happened was there arise an issue called ghost msg problem also called as phantom message
+ghost msg: if there are 3 chats and I have opened 1 chat then the notification icon is still showing it 3 
+            so there comes an issue
+             
+problem: no consistency in ui 
+
+so there require an interaction between js-state_variable and dom_ui
