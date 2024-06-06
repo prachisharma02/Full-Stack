@@ -11,3 +11,24 @@ ghost msg: if there are 3 chats and I have opened 1 chat then the notification i
 problem: no consistency in ui 
 
 so there require an interaction between js-state_variable and dom_ui
+
+NOW a big question is ?  that we know react is SPA there is only one  index.html file but there js is not loaded as 
+script tag(it is complusory to load js file to use the functionality)
+
+So How It WORKS?
+ANSWER : React contain scripts in package.json file and those scripts load the js file dynamically you can check 
+out by inspect and page source
+
+And in case of vite js file is directly loaded in index.html file
+
+React and Vite both are similar in working
+Difference is some of the rules in vite
+vite is 
+-->file structure different no as such public folder
+-->light weight
+-->easily installed
+-->lesser and necessary libraries installed
+------->RULES
+-->file name must be saved with jsx extension not js if js file is there and in react we can use both 
+--> file name starts with capital letter lite will give you error but react will not give you error 
+    but also it does not work accordingly
