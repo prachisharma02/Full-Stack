@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
+// so basically usestate was used to propage data or value changes in the ui how data propogates to frontend
 function App() {
-  const [count, setCount] = useState(0)
+  let [counter, setcount] = useState(7);
 
+  function increase() {
+    let count = counter + 1;
+    if (count > 20) {
+      alert("you cant go upto 20");
+    }
+    //counter++; // if we do this it will work on server sode but will not update the ui
+    // so for this hooks was introduced
+    // to make changes in the ui
+    else setcount(count);
+  }
+  function decrease() {
+    let count = counter - 1;
+    if (count < 0) {
+      setcount(0);
+      alert("value cant be decresae");
+    }
+    // counter--;
+    else setcount(count);
+  }
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      hello we are creating a project named counter
+      <h2>Counter value:{counter}</h2>
+      <button onClick={increase}>increased value {counter} </button>
+      <br />
+      <br />
+      <button onClick={decrease}>decreased value {counter} </button>
     </>
-  )
+  );
 }
-
-export default App
+export default App;
