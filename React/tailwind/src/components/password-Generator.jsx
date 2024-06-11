@@ -49,7 +49,6 @@ function PasswordGenerator() {
       <h1 style={{ color: "darkviolet" }}>Password Generator</h1>
       <div>
         <label htmlFor="">Password: </label>
-        <br />
         <input
           value={pass}
           type="text"
