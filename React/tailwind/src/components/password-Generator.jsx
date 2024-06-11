@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 function PasswordGenerator() {
   const [number, setnum] = useState(false); // character should be present in password or not
   const [char, setchar] = useState(false); // number should be present in password or not
   const [length, setlength] = useState(10); // password length
   const [pass, setpass] = useState(""); // to set the password
+  const passref = useRef(null);
+  // useref is used when we want any reference to anything (variable or anything)
 
   // useCallback: cache a function definition between re-renders means to store the previous values of any function
   // before re render takes place mtlb purani values + add on new values jo render krne p aay to ye cache ki trah
@@ -38,9 +40,13 @@ function PasswordGenerator() {
   useEffect(() => {
     PasswordGenerator();
   }, [number, length, char, PasswordGenerator]);
+
+  const copypassword = useCallback(() => {
+    window.navigator.clipboard.writeText(pass);
+  }, [pass]);
   return (
     <>
-      <h1>Password Generator</h1>
+      <h1 style={{ color: "darkviolet" }}>Password Generator</h1>
       <div>
         <label htmlFor="">Password: </label>
         <br />
@@ -50,6 +56,7 @@ function PasswordGenerator() {
           name=""
           id=""
           readOnly
+          ref={passref}
           style={{
             backgroundColor: "black",
             margin: "10px",
@@ -58,7 +65,7 @@ function PasswordGenerator() {
             borderRadius: "5px",
           }}
         />
-
+        <button onClick={copypassword}>copy</button>
         <br />
         <input
           min={6}
