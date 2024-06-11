@@ -1,5 +1,4 @@
-import React, { useCallback, useState } from "react";
-import background from "./background";
+import React, { useCallback, useEffect, useState } from "react";
 
 function PasswordGenerator() {
   const [number, setnum] = useState(false); // character should be present in password or not
@@ -14,16 +13,31 @@ function PasswordGenerator() {
   // it include dependencies like any variable on which that function is dependent if that value changes ut re renders
 
   const PasswordGenerator = useCallback(() => {
-    let pass = "";
-    let str = "ABCDEFGHIJKLMNOPQRSTUVWXVZabcdefghijklmnopqrstuvwxyz";
-    let number = 1234567890;
-    let char = "`~!@#$%^&*()_{}|?/'";
-    if (number) str += number;
-    if (char) str += char;
-    for (var i = 0; i < str.length; i++) {
+    let password = "";
+    let str = "ABCDEFGHIJKLMNOPQRSTUVWXVZabcdefghijklmnopqrstuvwxyz"; //total length : 52(26+26)
+    if (number) str += 1234567890;
+    if (char) str += "`~!@#$%^&*()_{}|?/'";
+
+    // so basically what is happening is
+    // i=0 lets say random aaya 43 then  pass += str.charAt(random) ka mtlb
+    // jo string hai (str)upar uski 43rd position ko hm pass me add krdenge
+    // aese he jitni length hm set krenge uske according password vary krega
+
+    for (let i = 0; i < length; i++) {
       let random = Math.floor(Math.random() * str.length + 1);
+      password += str.charAt(random);
     }
+    setpass(password);
+    // to yaha hmara password generate hojayga
   }, [length, number, char, setpass]);
+
+  // useeffect : is used to produce sideefects  whenever there is a change in any component it renders
+  // so here we want that when number,character,length values changes then password generator should re-render
+  // why we are doing this becausw we dont want to call this fn on button click
+
+  useEffect(() => {
+    PasswordGenerator();
+  }, [number, length, char, PasswordGenerator]);
   return (
     <>
       <h1>Password Generator</h1>
@@ -35,7 +49,14 @@ function PasswordGenerator() {
           type="text"
           name=""
           id=""
-          style={{ backgroundColor: "lightblue", margin: "10px" }}
+          readOnly
+          style={{
+            backgroundColor: "black",
+            margin: "10px",
+            width: "700px",
+            padding: "10px",
+            borderRadius: "5px",
+          }}
         />
 
         <br />
@@ -65,7 +86,7 @@ function PasswordGenerator() {
           name=""
           id=""
           onChange={() => {
-            setnum((prev) => !prev);
+            setchar((prev) => !prev);
           }}
         />
         <label style={{ marginRight: "10px" }}>Character</label>
