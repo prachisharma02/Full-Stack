@@ -42,6 +42,9 @@ function PasswordGenerator() {
   }, [number, length, char, PasswordGenerator]);
 
   const copypassword = useCallback(() => {
+    passref.current?.select(); // so ref is used when we want to use that reference to do something like here by
+    //taking reference we are able to select the selected text
+    passref.current?.setSelectionRange(0, 10);
     window.navigator.clipboard.writeText(pass);
   }, [pass]);
   return (

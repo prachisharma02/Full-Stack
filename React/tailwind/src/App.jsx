@@ -5,6 +5,7 @@ import "./App.css";
 import Card from "./components/card";
 import Background from "./components/background";
 import PasswordGenerator from "./components/password-Generator";
+import CustomizedPasswordGenerator from "./components/customizedPassword";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Card username="Khushi" password="khushis" />
       <Card /> */}
       {/* <Background /> */}
-      <PasswordGenerator />
+      {/* <PasswordGenerator /> */}
+      <CustomizedPasswordGenerator />
     </>
   );
 }
