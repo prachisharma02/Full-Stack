@@ -6,7 +6,8 @@ import Card from "./components/card";
 import Background from "./components/background";
 import PasswordGenerator from "./components/password-Generator";
 import CustomizedPasswordGenerator from "./components/customizedPassword";
-
+import usecurrrency from "./customhooks/useCurrInfo";
+import IndexCurr from "./components/IndexCurr";
 function App() {
   return (
     <>
@@ -18,7 +19,8 @@ function App() {
       <Card /> */}
       {/* <Background /> */}
       {/* <PasswordGenerator /> */}
-      <CustomizedPasswordGenerator />
+      {/* <CustomizedPasswordGenerator /> */}
+      <IndexCurr />
     </>
   );
 }

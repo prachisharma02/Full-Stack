@@ -6,8 +6,10 @@
   font-weight: 400;
   font-family: cursive;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #dca3df;
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #dca3df; */
+  background-image: url("https://i.pinimg.com/originals/85/9b/c6/859bc647a6cd0512dab9a952d2c43c6b.jpg");
+  background-size: cover;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -59,7 +61,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
   }
   a:hover {
     color: #747bff;

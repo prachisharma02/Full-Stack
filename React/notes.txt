@@ -55,3 +55,13 @@ LIKE IN ANIMATIO =N IT ONLY DISPLAYS FIRST AND LAST
 
 HYDRATION: HTML CSS IS LOADED HYDRATION IS A PROCESS OF INJECTING JS INTO CODE LIKE 
 BUTTON IS DISPLAYED BUT ITS FUNCTIONALITY INJECTION 
+
+
+KEYS in REACT
+ a key is the only thing React uses to identify DOM elements.
+ basically mtlb ye hai ki agar hm key use nhi krenge to dom ko kase pta chalega ki hm konsa component me chnage krrhe hai 
+ jase delete kra hmne to konsa kiya Aagr delete krne k baad ek aur add kiya to vo kha kiya yahi SAB
+
+ ek important point hai ki agar hm index use krenge to drawback hoga kyuki index bhi change hoga 
+ 1. if the items are reordered, React might not correctly associate the new position of items with their previous states, 
+ 2. If the array is sorted or filtered, the index will change while the actual item data does not.

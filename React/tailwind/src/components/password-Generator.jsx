@@ -35,8 +35,8 @@ function PasswordGenerator() {
 
   // useeffect : is used to produce sideefects  whenever there is a change in any component it renders
   // so here we want that when number,character,length values changes then password generator should re-render
-  // why we are doing this becausw we dont want to call this fn on button click
-
+  // why we are doing this because we dont want to call this fn on button click
+  // function inside this is executed when page loads or say mounted
   useEffect(() => {
     PasswordGenerator();
   }, [number, length, char, PasswordGenerator]);
