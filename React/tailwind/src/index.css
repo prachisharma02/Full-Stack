@@ -1,22 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  line-height: 1.5;
-  font-weight: 400;
-  font-family: cursive;
-  color-scheme: light dark;
-  /* color: rgba(255, 255, 255, 0.87); */
-  /* background-color: #dca3df; */
-  background-image: url("https://i.pinimg.com/originals/85/9b/c6/859bc647a6cd0512dab9a952d2c43c6b.jpg");
-  background-size: cover;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  padding: 0;
 }
-
+:root {
+  /* line-height: 1.5; */
+  /* font-weight: 400; */
+  font-family: cursive;
+  /* color-scheme: light dark; */
+  color: rgba(255, 255, 255, 0.87);
+  /* background-image: url("https://i.pinimg.com/originals/85/9b/c6/859bc647a6cd0512dab9a952d2c43c6b.jpg"); */
+  /* background-color: #dca3df; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  /* font-synthesis: none; */
+  /* text-rendering: optimizeLegibility; */
+  /* -webkit-font-smoothing: antialiased; */
+  /* -moz-osx-font-smoothing: grayscale; */
+}
+/*
 a {
   font-weight: 500;
   color: #646cff;
@@ -61,7 +66,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    /* background-color: #ffffff; */
+     background-color: #ffffff; 
   }
   a:hover {
     color: #747bff;
@@ -69,4 +74,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
