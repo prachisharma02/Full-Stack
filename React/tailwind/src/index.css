@@ -11,11 +11,12 @@
   font-family: cursive;
   /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
-  /* background-image: url("https://i.pinimg.com/originals/85/9b/c6/859bc647a6cd0512dab9a952d2c43c6b.jpg"); */
+  background-image: url("https://i.pinimg.com/originals/60/a0/b9/60a0b9d659b88047070f6c9f6cb5cffa.jpg");
   /* background-color: #dca3df; */
   background-size: cover;
   background-repeat: no-repeat;
   padding: 0;
+  background-attachment: fixed;
   /* font-synthesis: none; */
   /* text-rendering: optimizeLegibility; */
   /* -webkit-font-smoothing: antialiased; */

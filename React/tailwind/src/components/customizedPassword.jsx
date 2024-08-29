@@ -38,15 +38,9 @@ function PasswordGenerator() {
       let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"; // total length: 52 (26+26)
       if (number) str += "1234567890";
       if (char) str += "`~!@#$%^&*()_{}|?/'";
-      //   if (number) additionalChars += "1234567890";
-      //   if (char) additionalChars += "`~!@#$%^&*()_{}|?/";
 
       let remainingLength = Math.max(length - password.length, 0);
 
-      //   for (let i = 0; i < remainingLength; i++) {
-      //     let random = Math.floor(Math.random() * additionalChars.length);
-      //     password += additionalChars.charAt(random);
-      //   }
       for (let i = 0; i < remainingLength; i++) {
         let random = Math.floor(Math.random() * str.length);
         password += str.charAt(random);
@@ -86,16 +80,22 @@ function PasswordGenerator() {
 
   return (
     <>
-      <h1 style={{ color: "darkviolet" }}>Pass-Craft</h1>
+      <h1
+        style={{ color: "#5B4137 ", fontSize: "40px" }}
+        class="relative  text-center w-full   flex-none mb-2 pt-10 pb-5  text-2xl font-semibold text-white"
+      >
+        Pass-Craft
+      </h1>
       <div>
-        <label>Password: </label>
+        <label style={{ color: "#5B4137", fontSize: "20px" }}>Password </label>{" "}
+        <br />
         <input
           value={pass}
           type="text"
           readOnly
           ref={passRef}
           style={{
-            backgroundColor: "black",
+            backgroundColor: "#8c7a73",
             color: "white",
             margin: "10px",
             width: "700px",
@@ -103,7 +103,19 @@ function PasswordGenerator() {
             borderRadius: "5px",
           }}
         />
-        <button onClick={copyPassword}>Copy</button>
+        <button
+          style={{
+            backgroundColor: "#8c7a73",
+            color: "white",
+            margin: "10px",
+            width: "80px",
+            padding: "10px",
+            borderRadius: "5px",
+          }}
+          onClick={copyPassword}
+        >
+          Copy
+        </button>
         <br />
         <input
           min={6}
@@ -113,13 +125,19 @@ function PasswordGenerator() {
           onChange={(e) => setLength(Number(e.target.value))}
           style={{ marginRight: "10px" }}
         />
-        <label style={{ marginRight: "10px" }}>Length ({length})</label>
+        <label style={{ marginRight: "10px", color: "#5B4137" }}>
+          Length ({length})
+        </label>
         <input type="checkbox" onChange={() => setNum((prev) => !prev)} />
-        <label style={{ marginRight: "10px" }}>Numbers</label>
+        <label style={{ marginRight: "10px", color: "#5B4137" }}>Numbers</label>
         <input type="checkbox" onChange={() => setChar((prev) => !prev)} />
-        <label style={{ marginRight: "10px" }}>Characters</label>
+        <label style={{ marginRight: "10px", color: "#5B4137" }}>
+          Characters
+        </label>
         <br />
-        <label>Array Size: </label>
+        <label style={{ marginRight: "10px", color: "#5B4137" }}>
+          Array Size:{" "}
+        </label>
         <input
           type="number"
           value={arraySize}
@@ -130,6 +148,7 @@ function PasswordGenerator() {
           style={{
             margin: "10px",
             padding: "5px",
+            color: "#5B4137",
           }}
         />
         <br />
@@ -143,6 +162,7 @@ function PasswordGenerator() {
               style={{
                 margin: "10px",
                 padding: "5px",
+                color: "#5B4137",
               }}
             />
           </div>

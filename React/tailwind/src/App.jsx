@@ -9,20 +9,14 @@ import CustomizedPasswordGenerator from "./components/customizedPassword";
 import usecurrrency from "./customhooks/useCurrInfo";
 import IndexCurr from "./components/IndexCurr";
 import Header from "./components/header";
+import { Outlet } from "react-router-dom";
+import Footer from "./components/footer";
 function App() {
   return (
     <>
-      {/* <h1 className="bg-green-400 text-black p-4 rounded-xl mb-4">
-        Hello Tailwind
-      </h1> */}
-      {/* <Card username="Prachi" password="prachips" />
-      <Card username="Khushi" password="khushis" />
-      <Card /> */}
-      {/* <Background /> */}
-      {/* <PasswordGenerator /> */}
-      {/* <CustomizedPasswordGenerator /> */}
-      {/* <IndexCurr /> */}
       <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 }
